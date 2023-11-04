@@ -1,6 +1,4 @@
-#docker-compose down
-
-#docker build --platform linux/amd64  -t language-base ./language-base
+docker build --platform linux/amd64  -t language-base ./language-base
 docker build --platform linux/amd64  -t hadoop-base ./hadoop-base
 docker build --platform linux/amd64  -t spark-base ./spark-base
 
@@ -11,4 +9,4 @@ docker build --platform linux/amd64  -t yarntimelineserver ./yarntimelineserver
 docker build --platform linux/amd64  -t sparkhistoryserver ./sparkhistoryserver
 docker build --platform linux/amd64  -t zeppelin ./zeppelin
 
-#docker-compose up -d
+docker-compose up -d

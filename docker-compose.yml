@@ -18,8 +18,6 @@ services:
       - namenode:/opt/hadoop/yarn/timeline # yarn timeline data mount
     networks:
       - bridge
-  #      hs_bridge:
-  #        ipv4_address: 192.0.0.5
 
   datanode01:
     <<: *datanode_base
@@ -88,15 +86,8 @@ services:
 volumes:
   namenode:
   datanode01:
-  datanode02:
-  datanode03:
+#  datanode02:
+#  datanode03:
 
 networks:
   bridge:
-#networks:
-#  hs_bridge:
-#    driver: bridge
-#    ipam:
-#      driver: default
-#      config:
-#        - subnet: 192.0.0.0/16
