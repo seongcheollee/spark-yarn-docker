@@ -82,6 +82,21 @@ services:
       - namenode:/opt/spark/eventLog
       - /Users/seongcheollee/Documents/env/hadoop/zeppelin/notebook:/zeppelin-0.10.1-bin-all/notebook
       - /Users/seongcheollee/Documents/env/hadoop/data:/testdata
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    hostname: mongodb
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongodb:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=1234
+      - MONGO_INITDB_DATABASE=mydb
+    networks:
+      - bridge
 
 volumes:
   namenode:

@@ -22,8 +22,8 @@ RUN wget $PYTHON_URL && \
 RUN /Python-$PYTHON_VERSION/configure --enable-optimizations
 RUN make altinstall
 
-RUN ln -s /usr/local/bin/python3.7 /usr/bin/python3 && \
-    ln -s /usr/local/bin/python3.7 /usr/bin/python
+RUN ln -sf /usr/local/bin/python3.7 /usr/bin/python
+RUN ln -sf /usr/local/bin/python3.7 /usr/bin/python3
 
 RUN apt-get install -y python3-pip
 RUN pip3.7 install numpy pandas networkx
