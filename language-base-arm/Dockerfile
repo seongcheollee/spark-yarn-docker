@@ -25,6 +25,9 @@ RUN make altinstall
 RUN ln -s /usr/local/bin/python3.7 /usr/bin/python3 && \
     ln -s /usr/local/bin/python3.7 /usr/bin/python
 
+RUN apt-get install -y python3-pip
+RUN pip3.7 install numpy pandas networkx
+
 RUN apt-get clean && apt-get -y update && apt-get install -y openjdk-8-jdk
 
 
