@@ -1,3 +1,5 @@
+# amd64
+
 docker build --platform linux/amd64  -t language-base ./language-base
 docker build --platform linux/amd64  -t hadoop-base ./hadoop-base
 docker build --platform linux/amd64  -t spark-base ./spark-base
