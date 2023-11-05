@@ -43,16 +43,16 @@ services:
   #      hs_bridge:
   #        ipv4_address: 192.0.0.10
 
-  yarntimelineserver:
-    image: yarntimelineserver
-    container_name: yarntimelineserver
-    hostname: yarntimelineserver
-    ports:
-      - '9096:8188'
-    networks:
-      - bridge
-    volumes:
-      - namenode:/opt/hadoop/yarn/timeline
+  # yarntimelineserver:
+  #   image: yarntimelineserver
+  #   container_name: yarntimelineserver
+  #   hostname: yarntimelineserver
+  #   ports:
+  #     - '9096:8188'
+  #   networks:
+  #     - bridge
+  #   volumes:
+  #     - namenode:/opt/hadoop/yarn/timeline
   #      hs_bridge:
   #        ipv4_address: 192.0.0.12
 
