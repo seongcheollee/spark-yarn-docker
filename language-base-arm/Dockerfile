@@ -22,14 +22,17 @@ RUN wget $PYTHON_URL && \
 RUN /Python-$PYTHON_VERSION/configure --enable-optimizations
 RUN make altinstall
 
+RUN apt-get install -y python3-pip
+RUN pip3 install --upgrade pip
+RUN pip3 install pip==20.0.2
+
+
 RUN ln -sf /usr/local/bin/python3.7 /usr/bin/python
 RUN ln -sf /usr/local/bin/python3.7 /usr/bin/python3
 
-RUN apt-get install -y python3-pip
-RUN pip3.7 install numpy pandas networkx
+
+RUN pip3 install numpy pandas networkx pymongo
 
 RUN apt-get clean && apt-get -y update && apt-get install -y openjdk-8-jdk
-
-
 
 ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-arm64/jre
