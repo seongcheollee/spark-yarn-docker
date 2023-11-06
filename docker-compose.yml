@@ -99,7 +99,18 @@ services:
       - MONGO_INITDB_DATABASE=mydb
     networks:
       - bridge
+  fastapi:
+    image: fastapi
+    container_name: fastapi
+    ports:
+      - '80:8080'
+    volumes:
+      - /Users/seongcheollee/Documents/Docker/fastapi/src:/src
+    working_dir: /src
+    command: uvicorn main:app --host 0.0.0.0 --port 8080 --reload
 
+    networks:
+      - bridge
 volumes:
   namenode:
   datanode01:
