@@ -1,13 +1,13 @@
 version: '3.7'
 
 x-datanode_base: &datanode_base
-  image: datanode
+  image: yisc/datanode-arm64
   networks:
     - bridge
 
 services:
   namenode:
-    image: namenode
+    image: yisc/namenode-arm64
     container_name: namenode
     hostname: namenode
     ports:
@@ -31,7 +31,7 @@ services:
   #      hs_bridge:
   #        ipv4_address: 192.0.0.2
   resourcemanager:
-    image: resourcemanager
+    image: yisc/resourcemanager-arm64
     container_name: resourcemanager
     hostname: resourcemanager
     ports:
@@ -57,7 +57,7 @@ services:
   #        ipv4_address: 192.0.0.12
 
   sparkhistoryserver:
-    image: sparkhistoryserver
+    image: yisc/sparkhistoryserver-arm64
     container_name: sparkhistoryserver
     hostname: sparkhistoryserver
     ports:
@@ -71,7 +71,7 @@ services:
       - bridge
 
   zeppelin:
-    image: zeppelin
+    image: yisc/zeppelin-arm64
     container_name: zeppelin
     hostname: zeppelin
     ports:
@@ -81,9 +81,9 @@ services:
     volumes:
       - namenode:/opt/spark/eventLog
       - /Users/seongcheollee/Documents/env/hadoop/zeppelin/notebook:/zeppelin-0.10.1-bin-all/notebook
-      - /Users/seongcheollee/Documents/env/hadoop/data:/testdata
+      - /Users/seongcheollee/Documents/env/hadoop/data:/Ditto
   mongodb:
-    image: mongo
+    image: yisc/mongo-arm64
     container_name: mongodb
     hostname: mongodb
     restart: always
@@ -91,6 +91,8 @@ services:
       - 27017:27017
     volumes:
       - ./mongodb:/data/db
+      - /Users/seongcheollee/Documents/env/mongo:/Dsitto
+
     environment:
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=1234
