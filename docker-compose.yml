@@ -100,7 +100,7 @@ services:
     networks:
       - bridge
   fastapi:
-    image: fastapi
+    image: yisc/fastapi-arm64
     container_name: fastapi
     ports:
       - '80:8080'
