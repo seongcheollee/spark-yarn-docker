@@ -1,5 +1,3 @@
-# spark-yarn-docker
-
 <h1>Egg Project Data Environment on Docker</h1>
 
 
